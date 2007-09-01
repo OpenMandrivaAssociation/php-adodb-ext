@@ -8,7 +8,7 @@
 Summary:	ADOdb extension for PHP
 Name:		php-%{modname}
 Version:	5.0.4
-Release:	%mkrel 11
+Release:	%mkrel 12
 Epoch:		1
 Group:		Development/PHP
 License:	BSD
@@ -31,15 +31,7 @@ with C code. This extension is compatible with ADOdb 3.32 or later.
 cp %{SOURCE1} %{inifile}
 
 %build
-export CFLAGS="%{optflags} -fPIC"
-export CXXFLAGS="%{optflags} -fPIC"
-export FFLAGS="%{optflags} -fPIC"
-
-%if %mdkversion >= 200710
-export CFLAGS="$CFLAGS -fstack-protector"
-export CXXFLAGS="$CXXFLAGS -fstack-protector"
-export FFLAGS="$FFLAGS -fstack-protector"
-%endif
+%serverbuild
 
 phpize
 %configure2_5x \
