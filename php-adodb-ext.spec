@@ -8,7 +8,7 @@
 Summary:	ADOdb extension for PHP
 Name:		php-%{modname}
 Version:	5.0.4
-Release:	%mkrel 12
+Release:	%mkrel 13
 Epoch:		1
 Group:		Development/PHP
 License:	BSD
@@ -16,7 +16,7 @@ URL:		http://phplens.com/
 Source0:	http://phplens.com/lens/dl/%{modname}-%{src_version}.tar.bz2
 Source1:	%{name}.ini
 Requires:	php-adodb >= 1:4.81
-Requires:	php = %{php_version}
+Requires:	php >= 3:5.2.0
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
@@ -53,6 +53,18 @@ install -m0755 %{soname} %{buildroot}%{_libdir}/php/extensions/
 cat > README.%{modname} << EOF
 The %{name} package contains a dynamic shared object (DSO) for PHP. 
 EOF
+
+%post
+if [ -f /var/lock/subsys/httpd ]; then
+    %{_initrddir}/httpd restart >/dev/null || :
+fi
+
+%postun
+if [ "$1" = "0" ]; then
+    if [ -f /var/lock/subsys/httpd ]; then
+	%{_initrddir}/httpd restart >/dev/null || :
+    fi
+fi
 
 %clean
 rm -rf %{buildroot}
