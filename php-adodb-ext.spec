@@ -18,6 +18,7 @@ Source1:	%{name}.ini
 Requires:	php-adodb >= 1:4.81
 Requires:	php >= 3:5.2.0
 BuildRequires:	php-devel >= 3:5.2.0
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 The ADOdb PHP extension provides up to 75% speedup by replacing parts of ADOdb
