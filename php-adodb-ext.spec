@@ -8,7 +8,7 @@
 Summary:	ADOdb extension for PHP
 Name:		php-%{modname}
 Version:	5.0.4
-Release:	%mkrel 14
+Release:	%mkrel 15
 Epoch:		1
 Group:		Development/PHP
 License:	BSD
@@ -18,7 +18,7 @@ Source1:	%{name}.ini
 Requires:	php-adodb >= 1:4.81
 Requires:	php >= 3:5.2.0
 BuildRequires:	php-devel >= 3:5.2.0
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The ADOdb PHP extension provides up to 75% speedup by replacing parts of ADOdb
