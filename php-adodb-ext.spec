@@ -8,7 +8,7 @@
 Summary:	ADOdb extension for PHP
 Name:		php-%{modname}
 Version:	5.0.4
-Release:	%mkrel 22
+Release:	%mkrel 23
 Epoch:		1
 Group:		Development/PHP
 License:	BSD
