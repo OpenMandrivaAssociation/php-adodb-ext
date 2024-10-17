@@ -12,7 +12,7 @@ Release:	%mkrel 26
 Epoch:		1
 Group:		Development/PHP
 License:	BSD
-URL:		http://phplens.com/
+URL:		https://phplens.com/
 Source0:	http://phplens.com/lens/dl/%{modname}-%{src_version}.tar.bz2
 Source1:	%{name}.ini
 Requires:	php-adodb >= 1:4.81
