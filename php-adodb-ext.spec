@@ -17,6 +17,11 @@ Source0:	http://phplens.com/lens/dl/%{modname}-%{src_version}.tar.bz2
 Source1:	%{name}.ini
 Requires:	php-adodb >= 1:4.81
 Requires:	php >= 3:5.2.0
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
